@@ -7,12 +7,21 @@
 package definitions;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Student {
     private String nameOfTheStudent;
     private long universityRollNumberOfTheStudent;
     private int numberOfBooksIssuedByTheStudent;
     private Book[] namesOfTheBooksIssuedByTheStudent;
+
+    public Student(String nameOfTheStudent, long universityRollNumberOfTheStudent,
+                   int numberOfBooksIssuedByTheStudent, Book[] namesOfTheBooksIssuedByTheStudent) {
+        this.nameOfTheStudent = nameOfTheStudent;
+        this.universityRollNumberOfTheStudent = universityRollNumberOfTheStudent;
+        this.numberOfBooksIssuedByTheStudent = numberOfBooksIssuedByTheStudent;
+        this.namesOfTheBooksIssuedByTheStudent = namesOfTheBooksIssuedByTheStudent;
+    }
 
     public String getNameOfTheStudent() {
         return nameOfTheStudent;
@@ -46,14 +55,6 @@ public class Student {
         this.namesOfTheBooksIssuedByTheStudent = namesOfTheBooksIssuedByTheStudent;
     }
 
-    public Student(String nameOfTheStudent, long universityRollNumberOfTheStudent,
-                   int numberOfBooksIssuedByTheStudent, Book[] namesOfTheBooksIssuedByTheStudent ) {
-        this.nameOfTheStudent = nameOfTheStudent;
-        this.universityRollNumberOfTheStudent = universityRollNumberOfTheStudent;
-        this.numberOfBooksIssuedByTheStudent = numberOfBooksIssuedByTheStudent;
-        this.namesOfTheBooksIssuedByTheStudent = namesOfTheBooksIssuedByTheStudent;
-    }
-
     @Override
     public String toString() {
         return "Student{" +
@@ -62,6 +63,28 @@ public class Student {
                 ", numberOfBooksIssuedByTheStudent=" + numberOfBooksIssuedByTheStudent +
                 ", namesOfTheBooksIssuedByTheStudent=" + Arrays.toString(namesOfTheBooksIssuedByTheStudent) +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Student student = (Student) o;
+        return getUniversityRollNumberOfTheStudent() == student.getUniversityRollNumberOfTheStudent() &&
+                getNumberOfBooksIssuedByTheStudent() == student.getNumberOfBooksIssuedByTheStudent() &&
+                Objects.equals(getNameOfTheStudent(), student.getNameOfTheStudent()) &&
+                Arrays.equals(getNamesOfTheBooksIssuedByTheStudent(), student.getNamesOfTheBooksIssuedByTheStudent());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(getNameOfTheStudent(), getUniversityRollNumberOfTheStudent(), getNumberOfBooksIssuedByTheStudent());
+        result = 31 * result + Arrays.hashCode(getNamesOfTheBooksIssuedByTheStudent());
+        return result;
     }
 
 

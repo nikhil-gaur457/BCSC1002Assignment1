@@ -7,4 +7,17 @@
 package definitions;
 
 public class Library {
+    private Book[] booksThatAreCurrentlyAvailable;
+
+    public Book[] getBooksThatAreCurrentlyAvailable() {
+        return booksThatAreCurrentlyAvailable;
+    }
+
+    public void setBooksThatAreCurrentlyAvailable(Book[] booksThatAreCurrentlyAvailable) {
+        this.booksThatAreCurrentlyAvailable = booksThatAreCurrentlyAvailable;
+    }
+
+    public Library() {
+
+    }
 }
