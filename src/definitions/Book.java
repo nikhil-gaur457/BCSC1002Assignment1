@@ -11,5 +11,29 @@ public class Book {
     private String nameOfTheAuthorOfTheBook;
     private String thirteenDigitISBNNumberOfTheBook;
 
+    public String getNameOfTheBook() {
+        return nameOfTheBook;
+    }
+
+    public void setNameOfTheBook(String nameOfTheBook) {
+        this.nameOfTheBook = nameOfTheBook;
+    }
+
+    public String getNameOfTheAuthorOfTheBook() {
+        return nameOfTheAuthorOfTheBook;
+    }
+
+    public void setNameOfTheAuthorOfTheBook(String nameOfTheAuthorOfTheBook) {
+        this.nameOfTheAuthorOfTheBook = nameOfTheAuthorOfTheBook;
+    }
+
+    public String getThirteenDigitISBNNumberOfTheBook() {
+        return thirteenDigitISBNNumberOfTheBook;
+    }
+
+    public void setThirteenDigitISBNNumberOfTheBook(String thirteenDigitISBNNumberOfTheBook) {
+        this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
+    }
+
 
 }
