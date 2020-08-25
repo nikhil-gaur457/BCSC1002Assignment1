@@ -12,4 +12,45 @@ public class Student {
     private int numberOfBooksIssuedByTheStudent;
     private Book[] namesOfTheBooksIssuedByTheStudent;
 
+    public String getNameOfTheStudent() {
+        return nameOfTheStudent;
+    }
+
+    public void setNameOfTheStudent(String nameOfTheStudent) {
+        this.nameOfTheStudent = nameOfTheStudent;
+    }
+
+    public long getUniversityRollNumberOfTheStudent() {
+        return universityRollNumberOfTheStudent;
+    }
+
+    public void setUniversityRollNumberOfTheStudent(long universityRollNumberOfTheStudent) {
+        this.universityRollNumberOfTheStudent = universityRollNumberOfTheStudent;
+    }
+
+    public int getNumberOfBooksIssuedByTheStudent() {
+        return numberOfBooksIssuedByTheStudent;
+    }
+
+    public void setNumberOfBooksIssuedByTheStudent(int numberOfBooksIssuedByTheStudent) {
+        this.numberOfBooksIssuedByTheStudent = numberOfBooksIssuedByTheStudent;
+    }
+
+    public Book[] getNamesOfTheBooksIssuedByTheStudent() {
+        return namesOfTheBooksIssuedByTheStudent;
+    }
+
+    public void setNamesOfTheBooksIssuedByTheStudent(Book[] namesOfTheBooksIssuedByTheStudent) {
+        this.namesOfTheBooksIssuedByTheStudent = namesOfTheBooksIssuedByTheStudent;
+    }
+
+    public Student(String nameOfTheStudent, long universityRollNumberOfTheStudent,
+                   int numberOfBooksIssuedByTheStudent, Book[] namesOfTheBooksIssuedByTheStudent ) {
+        this.nameOfTheStudent = nameOfTheStudent;
+        this.universityRollNumberOfTheStudent = universityRollNumberOfTheStudent;
+        this.numberOfBooksIssuedByTheStudent = numberOfBooksIssuedByTheStudent;
+        this.namesOfTheBooksIssuedByTheStudent = namesOfTheBooksIssuedByTheStudent;
+    }
+
+
 }
