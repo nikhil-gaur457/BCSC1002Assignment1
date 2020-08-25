@@ -6,6 +6,8 @@
  * */
 package definitions;
 
+import java.sql.SQLOutput;
+
 public class Book {
     private String nameOfTheBook;
     private String nameOfTheAuthorOfTheBook;
@@ -35,5 +37,32 @@ public class Book {
         this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
     }
 
+    public Book(String nameOfTheBook, String nameOfTheAuthorOfTheBook, String thirteenDigitISBNNumberOfTheBook) {
+        this.nameOfTheBook = nameOfTheBook;
+        this.nameOfTheAuthorOfTheBook = nameOfTheAuthorOfTheBook;
+        this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
+    }
 
+    public Book(String thirteenDigitISBNNumberOfTheBook) {
+        this.nameOfTheBook = "Head First Java";
+        this.nameOfTheAuthorOfTheBook = "Kathy Sierra & Bert Bates";
+        this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
+    }
+
+    public void doCheckOut() {
+        System.out.println("Enjoy... \"" + getNameOfTheBook() + "\".");
+    }
+
+    public void doReturn() {
+        System.out.println("Enjoy... \"" + getNameOfTheBook() + "\".");
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "nameOfTheBook='" + nameOfTheBook + '\'' +
+                ", nameOfTheAuthorOfTheBook='" + nameOfTheAuthorOfTheBook + '\'' +
+                ", thirteenDigitISBNNumberOfTheBook='" + thirteenDigitISBNNumberOfTheBook + '\'' +
+                '}';
+    }
 }
