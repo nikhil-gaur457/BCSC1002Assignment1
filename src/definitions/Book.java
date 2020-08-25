@@ -6,13 +6,24 @@
  * */
 package definitions;
 
-import java.sql.SQLOutput;
 import java.util.Objects;
 
 public class Book {
     private String nameOfTheBook;
     private String nameOfTheAuthorOfTheBook;
     private String thirteenDigitISBNNumberOfTheBook;
+
+    public Book(String nameOfTheBook, String nameOfTheAuthorOfTheBook, String thirteenDigitISBNNumberOfTheBook) {
+        this.nameOfTheBook = nameOfTheBook;
+        this.nameOfTheAuthorOfTheBook = nameOfTheAuthorOfTheBook;
+        this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
+    }
+
+    public Book(String thirteenDigitISBNNumberOfTheBook) {
+        this.nameOfTheBook = "Head First Java";
+        this.nameOfTheAuthorOfTheBook = "Kathy Sierra & Bert Bates";
+        this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
+    }
 
     public String getNameOfTheBook() {
         return nameOfTheBook;
@@ -35,18 +46,6 @@ public class Book {
     }
 
     public void setThirteenDigitISBNNumberOfTheBook(String thirteenDigitISBNNumberOfTheBook) {
-        this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
-    }
-
-    public Book(String nameOfTheBook, String nameOfTheAuthorOfTheBook, String thirteenDigitISBNNumberOfTheBook) {
-        this.nameOfTheBook = nameOfTheBook;
-        this.nameOfTheAuthorOfTheBook = nameOfTheAuthorOfTheBook;
-        this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
-    }
-
-    public Book(String thirteenDigitISBNNumberOfTheBook) {
-        this.nameOfTheBook = "Head First Java";
-        this.nameOfTheAuthorOfTheBook = "Kathy Sierra & Bert Bates";
         this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
     }
 
