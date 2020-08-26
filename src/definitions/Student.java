@@ -15,10 +15,12 @@ public class Student {
     private int numberOfBooksIssuedByTheStudent;
     private Book[] namesOfTheBooksIssuedByTheStudent;
 
-    public Student(String nameOfTheStudent, long universityRollNumberOfTheStudent,
-                   int numberOfBooksIssuedByTheStudent, Book[] namesOfTheBooksIssuedByTheStudent) {
-        this.nameOfTheStudent = nameOfTheStudent;
-        this.universityRollNumberOfTheStudent = universityRollNumberOfTheStudent;
+    public Student() {
+    }
+
+    public Student(int numberOfBooksIssuedByTheStudent, Book[] namesOfTheBooksIssuedByTheStudent) {
+        this.nameOfTheStudent = "Nikhil";
+        this.universityRollNumberOfTheStudent = 191500496L;
         this.numberOfBooksIssuedByTheStudent = numberOfBooksIssuedByTheStudent;
         this.namesOfTheBooksIssuedByTheStudent = namesOfTheBooksIssuedByTheStudent;
     }
@@ -88,4 +90,17 @@ public class Student {
     }
 
 
+    public void addBook(String name) {
+        System.out.println("\"" + name + "\" book is issued.");
+    }
+
+    public static void doReturn(String name) {
+        System.out.println("Thanks for returning, " + name + ".");
+    }
+
+    public void listOfIssuedBooks() {
+        for (Book book : this.namesOfTheBooksIssuedByTheStudent) {
+            System.out.println(book);
+        }
+    }
 }

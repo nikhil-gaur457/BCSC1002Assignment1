@@ -19,10 +19,10 @@ public class Book {
         this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
     }
 
-    public Book(String thirteenDigitISBNNumberOfTheBook) {
+    public Book() {
         this.nameOfTheBook = "Head First Java";
         this.nameOfTheAuthorOfTheBook = "Kathy Sierra & Bert Bates";
-        this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
+        this.thirteenDigitISBNNumberOfTheBook = "55rtxz34519y0";
     }
 
     public String getNameOfTheBook() {
@@ -54,7 +54,7 @@ public class Book {
     }
 
     public void doReturn() {
-        System.out.println("Enjoy... \"" + getNameOfTheBook() + "\".");
+        System.out.println("Thank for returning \"" + getNameOfTheBook() + "\".");
     }
 
     @Override
