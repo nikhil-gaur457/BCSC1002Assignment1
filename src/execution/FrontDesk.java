@@ -4,6 +4,7 @@
  *  Time: 3:50 PM
  *  File Name : FrontDesk.java
  * */
+
 package execution;
 
 import definitions.Student;
@@ -18,7 +19,7 @@ public class FrontDesk {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int studentChoice;
+        int studentInput;
         String bookName;
         Student student = new Student();
         do {
@@ -29,23 +30,32 @@ public class FrontDesk {
             System.out.println("3. Show me all my issues books.");
             System.out.println("4. Exit.");
             System.out.println("Enter you choice between 1-4 : ");
-            studentChoice = scanner.nextInt();
-            switch (studentChoice) {
+            studentInput = scanner.nextInt();
+            switch (studentInput) {
                 case ISSUE_A_NEW_BOOK:
-                    System.out.println("These are the books available in library : ");
+                    System.out.println("Enter the name of the book for issue : ");
+                    scanner.nextLine();
+                    bookName = scanner.nextLine();
+                    student.addBook(bookName);
                     break;
                 case RETURN_A_PREVIOUSLY_ISSUES_BOOK:
+                    System.out.println("Enter the name of the book you want to return : ");
+                    scanner.nextLine();
+                    bookName = scanner.nextLine();
+                    Student.doReturn(bookName);
                     break;
                 case SHOW_ME_ALL_MY_ISSUES_BOOKS:
+                    System.out.println("list of books issued by you : ");
+                    student.listOfIssuedBooks();
                     break;
                 case EXIT:
-                System.out.println("ThankYou for using our Serivces!");
+                System.out.println("ThankYou for using our Services!");
                 break;
                 default :
-                    System.out.println("Sorry..!, You have Enterd wrong choice.");
+                    System.out.println("Sorry..!, You have Entered wrong choice.");
                     break;
             }
-        } while (EXIT != studentChoice);
+        } while (studentInput != EXIT);
         scanner.close();
     }
 }

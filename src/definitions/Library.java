@@ -4,6 +4,7 @@
  *  Time: 3:50 PM
  *  File Name : Library.java
  * */
+
 package definitions;
 
 import java.util.Arrays;
@@ -11,6 +12,7 @@ import java.util.Arrays;
 public class Library {
     private Book[] booksThatAreCurrentlyAvailable;
 
+    // Non-Parameterized Constructor Method
     public Library() {
         this.booksThatAreCurrentlyAvailable = new Book[10];
         for (int i = 0; i < booksThatAreCurrentlyAvailable.length; i++) {
@@ -18,18 +20,22 @@ public class Library {
         }
     }
 
+    // Parameterized Constructor Method
     public Library(Book[] booksThatAreCurrentlyAvailable) {
         this.booksThatAreCurrentlyAvailable = booksThatAreCurrentlyAvailable;
     }
 
+    // Getter
     public Book[] getBooksThatAreCurrentlyAvailable() {
         return booksThatAreCurrentlyAvailable;
     }
 
+    // Setter
     public void setBooksThatAreCurrentlyAvailable(Book[] booksThatAreCurrentlyAvailable) {
         this.booksThatAreCurrentlyAvailable = booksThatAreCurrentlyAvailable;
     }
 
+    // toString()
     @Override
     public String toString() {
         return "Library{" +
@@ -37,6 +43,7 @@ public class Library {
                 '}';
     }
 
+    // equals() and hashcode()
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

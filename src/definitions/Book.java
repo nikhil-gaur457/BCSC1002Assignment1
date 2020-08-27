@@ -13,18 +13,21 @@ public class Book {
     private String nameOfTheAuthorOfTheBook;
     private String thirteenDigitISBNNumberOfTheBook;
 
-    public Book(String nameOfTheBook, String nameOfTheAuthorOfTheBook, String thirteenDigitISBNNumberOfTheBook) {
-        this.nameOfTheBook = nameOfTheBook;
-        this.nameOfTheAuthorOfTheBook = nameOfTheAuthorOfTheBook;
-        this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
-    }
-
+    // Non-Parameterized Constructor Method for showing the book name and details.
     public Book() {
         this.nameOfTheBook = "Head First Java";
         this.nameOfTheAuthorOfTheBook = "Kathy Sierra & Bert Bates";
         this.thirteenDigitISBNNumberOfTheBook = "55rtxz34519y0";
     }
 
+    // Parameterized Constructor Method
+    public Book(String nameOfTheBook, String nameOfTheAuthorOfTheBook, String thirteenDigitISBNNumberOfTheBook) {
+        this.nameOfTheBook = nameOfTheBook;
+        this.nameOfTheAuthorOfTheBook = nameOfTheAuthorOfTheBook;
+        this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
+    }
+
+    // Getter()-Setter method
     public String getNameOfTheBook() {
         return nameOfTheBook;
     }
@@ -49,13 +52,22 @@ public class Book {
         this.thirteenDigitISBNNumberOfTheBook = thirteenDigitISBNNumberOfTheBook;
     }
 
+    /**
+     * This method will allow the Student to take the book.
+     */
     public void doCheckOut() {
         System.out.println("Enjoy... \"" + getNameOfTheBook() + "\".");
     }
 
+    /**
+     * This method will allow Student to return the book.
+     */
     public void doReturn() {
         System.out.println("Thank for returning \"" + getNameOfTheBook() + "\".");
     }
+
+    // The toString() method
+    // It is used to convert the object to a string.
 
     @Override
     public String toString() {
@@ -66,6 +78,7 @@ public class Book {
                 '}';
     }
 
+    // The equals() method and hashcode()
     @Override
     public boolean equals(Object o) {
         if (this == o) {

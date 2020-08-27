@@ -4,6 +4,7 @@
  *  Time: 3:49 PM
  *  File Name : Student.java
  * */
+
 package definitions;
 
 import java.util.Arrays;
@@ -15,16 +16,31 @@ public class Student {
     private int numberOfBooksIssuedByTheStudent;
     private Book[] namesOfTheBooksIssuedByTheStudent;
 
-    public Student() {
+    // Non-Parameterized Constructor Method
+    public Student(){
+        this.namesOfTheBooksIssuedByTheStudent = new Book[4];
+        for (int i = 0; i < namesOfTheBooksIssuedByTheStudent.length; i++) {
+            namesOfTheBooksIssuedByTheStudent[i] = new Book();
+        }
     }
 
-    public Student(int numberOfBooksIssuedByTheStudent, Book[] namesOfTheBooksIssuedByTheStudent) {
-        this.nameOfTheStudent = "Nikhil";
-        this.universityRollNumberOfTheStudent = 191500496L;
+    // Parameterized Constructor Method
+    public Student(String nameOfTheStudent, long universityRollNumberOfTheStudent, int numberOfBooksIssuedByTheStudent, Book[] namesOfTheBooksIssuedByTheStudent) {
+        this.nameOfTheStudent = nameOfTheStudent;
+        this.universityRollNumberOfTheStudent = universityRollNumberOfTheStudent;
         this.numberOfBooksIssuedByTheStudent = numberOfBooksIssuedByTheStudent;
         this.namesOfTheBooksIssuedByTheStudent = namesOfTheBooksIssuedByTheStudent;
     }
 
+    /** This method will allow the student to return the book.
+     *
+     * @param name The name of the book that Student want to return.
+     */
+    public static void doReturn(String name) {
+        System.out.println("Thanks for returning the book of " + "'" + name + "'.");
+    }
+
+    // Getter() - Setter() method
     public String getNameOfTheStudent() {
         return nameOfTheStudent;
     }
@@ -57,6 +73,7 @@ public class Student {
         this.namesOfTheBooksIssuedByTheStudent = namesOfTheBooksIssuedByTheStudent;
     }
 
+    // toString()
     @Override
     public String toString() {
         return "Student{" +
@@ -67,6 +84,8 @@ public class Student {
                 '}';
     }
 
+
+    // equals() method and hashcode()
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -89,15 +108,20 @@ public class Student {
         return result;
     }
 
+    /**
+     * This method will allow the Student for issue the book.
+     *
+     * @param name The name of the new book to be issued.
+     */
 
     public void addBook(String name) {
         System.out.println("\"" + name + "\" book is issued.");
     }
 
-    public static void doReturn(String name) {
-        System.out.println("Thanks for returning, " + name + ".");
-    }
-
+    /**
+     * This method will print all the books that was issued by Student or
+     * the elements of the 'namesOfTheBooksIssuedBYTheStudent' array.
+     */
     public void listOfIssuedBooks() {
         for (Book book : this.namesOfTheBooksIssuedByTheStudent) {
             System.out.println(book);
