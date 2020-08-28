@@ -39,7 +39,7 @@ public class FrontDesk {
                     student.addBook(bookName);
                     break;
                 case RETURN_A_PREVIOUSLY_ISSUES_BOOK:
-                    System.out.println("Enter the name of the book you want to return : ");
+                    System.out.println("Enter the name of the book that you previously issues : ");
                     scanner.nextLine();
                     bookName = scanner.nextLine();
                     Student.doReturn(bookName);

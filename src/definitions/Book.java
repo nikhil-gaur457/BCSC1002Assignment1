@@ -75,7 +75,7 @@ public class Book {
      * This method will allow Student to return the book.
      */
     public void doReturn() {
-        System.out.println("Thank for returning \"" + getNameOfTheBook() + "\".");
+        System.out.println("Previously issued book of \"" + getNameOfTheBook() + "\" is returned.");
     }
 
     // The toString() method
