@@ -20,7 +20,10 @@ public class Student {
     public Student(){
         this.namesOfTheBooksIssuedByTheStudent = new Book[4];
         for (int i = 0; i < namesOfTheBooksIssuedByTheStudent.length; i++) {
-            namesOfTheBooksIssuedByTheStudent[i] = new Book();
+            namesOfTheBooksIssuedByTheStudent[0] = new Book();
+            namesOfTheBooksIssuedByTheStudent[1] = new Book("Book" + (i+1));
+            namesOfTheBooksIssuedByTheStudent[2] = new Book("Book","Author");
+            namesOfTheBooksIssuedByTheStudent[3] = new Book("Clean Code", "Uncle Bob", "325mngt1029bo");
         }
     }
 

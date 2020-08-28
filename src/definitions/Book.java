@@ -20,6 +20,18 @@ public class Book {
         this.thirteenDigitISBNNumberOfTheBook = "55rtxz34519y0";
     }
 
+    public Book(String nameOfTheBook) {
+        this.nameOfTheBook = "Effective Java";
+        this.nameOfTheAuthorOfTheBook = "Joshua Bloch";
+        this.thirteenDigitISBNNumberOfTheBook = "54mbdf45101zx";
+    }
+
+    public Book(String nameOfTheBook, String nameOfTheAuthorOfTheBook) {
+        this.nameOfTheBook = "Java";
+        this.nameOfTheAuthorOfTheBook = "Herbert Schildt";
+        this.thirteenDigitISBNNumberOfTheBook = "81rtnc58319Ao";
+    }
+
     // Parameterized Constructor Method
     public Book(String nameOfTheBook, String nameOfTheAuthorOfTheBook, String thirteenDigitISBNNumberOfTheBook) {
         this.nameOfTheBook = nameOfTheBook;
