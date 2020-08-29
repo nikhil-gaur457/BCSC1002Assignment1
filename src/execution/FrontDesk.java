@@ -7,6 +7,7 @@
 
 package execution;
 
+import definitions.Library;
 import definitions.Student;
 
 import java.util.Scanner;
@@ -20,8 +21,10 @@ public class FrontDesk {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int studentInput;
-        String bookName;
         Student student = new Student();
+        Library library = new Library();
+        library.setBooksInLibrary();
+        String bookName;
         do {
             System.out.println("-=-=--=-=-\"Welcome To The Front Desk\"-=-=--=-=-");
             System.out.println("How may I help you today?");
@@ -33,16 +36,29 @@ public class FrontDesk {
             studentInput = scanner.nextInt();
             switch (studentInput) {
                 case ISSUE_A_NEW_BOOK:
-                    System.out.println("Enter the name of the book for issue : ");
                     scanner.nextLine();
+                    System.out.println("Enter your name : ");
+                    student.setNameOfTheStudent(scanner.nextLine());
+                    System.out.println("Enter your University roll number : ");
+                    student.setUniversityRollNumberOfTheStudent(scanner.nextLong());
+                    System.out.println("number of books you want to issue");
+                    student.setNumberOfBooksIssuedByTheStudent(scanner.nextInt());
+                    System.out.println("Books available in library : ");
+                    library.availableBooks();
+                    scanner.nextLine();
+                    System.out.println("Enter the name of the book for issue : ");
                     bookName = scanner.nextLine();
                     student.addBook(bookName);
                     break;
                 case RETURN_A_PREVIOUSLY_ISSUES_BOOK:
-                    System.out.println("Enter the name of the book that you previously issues : ");
-                    scanner.nextLine();
-                    bookName = scanner.nextLine();
-                    Student.doReturn(bookName);
+                    if (student.getNumberOfBooksIssuedByTheStudent() == 0) {
+                        System.out.println("You have issued no books");
+                    } else {
+                        System.out.println("Enter the name of the book that you previously issues : ");
+                        scanner.nextLine();
+                        bookName = scanner.nextLine();
+                        Student.doReturn(bookName);
+                    }
                     break;
                 case SHOW_ME_ALL_MY_ISSUES_BOOKS:
                     System.out.println("list of books issued by you : ");

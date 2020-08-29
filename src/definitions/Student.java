@@ -40,7 +40,7 @@ public class Student {
      * @param name The name of the book that Student want to return.
      */
     public static void doReturn(String name) {
-        System.out.println("Previously issued book of \"" + name + "\" is returned.");
+        System.out.println("Thanks for returning the book of \"" + name + "\".");
     }
 
     // Getter() - Setter() method
