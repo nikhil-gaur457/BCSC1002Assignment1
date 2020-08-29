@@ -65,9 +65,9 @@ public class FrontDesk {
                     student.listOfIssuedBooks();
                     break;
                 case EXIT:
-                System.out.println("ThankYou for using our Services!");
-                break;
-                default :
+                    System.out.println("ThankYou for using our Services!");
+                    break;
+                default:
                     System.out.println("Sorry..!, You have Entered wrong choice.");
                     break;
             }
